@@ -18,7 +18,10 @@ export function Toolbar({
       <div className="toolbar-left">
         <label className="select-all">
           <input type="checkbox" checked={allSelected} onChange={onToggleAll} />
-          <span>{selectedCount} elements selected</span>
+          <span>
+            {selectedCount} {selectedCount === 1 ? "element" : "elements"}{" "}
+            selected
+          </span>
         </label>
       </div>
 

@@ -15,7 +15,7 @@ describe("Toolbar", () => {
       />,
     );
 
-    expect(screen.getByText("Select all (2 selected)")).toBeInTheDocument();
+    expect(screen.getByText(/2.*elements selected/i)).toBeInTheDocument();
   });
 
   it("disables actions when nothing is selected", () => {
@@ -29,8 +29,12 @@ describe("Toolbar", () => {
       />,
     );
 
-    expect(screen.getByRole("button", { name: "Duplicate" })).toBeDisabled();
-    expect(screen.getByRole("button", { name: "Delete" })).toBeDisabled();
+    expect(
+      screen.getByRole("button", { name: "Duplicate selected users" }),
+    ).toBeDisabled();
+    expect(
+      screen.getByRole("button", { name: "Delete selected users" }),
+    ).toBeDisabled();
   });
 
   it("calls duplicate and delete actions", async () => {
@@ -48,8 +52,12 @@ describe("Toolbar", () => {
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: "Duplicate" }));
-    await user.click(screen.getByRole("button", { name: "Delete" }));
+    await user.click(
+      screen.getByRole("button", { name: "Duplicate selected users" }),
+    );
+    await user.click(
+      screen.getByRole("button", { name: "Delete selected users" }),
+    );
 
     expect(onDuplicate).toHaveBeenCalledTimes(1);
     expect(onDelete).toHaveBeenCalledTimes(1);

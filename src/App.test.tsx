@@ -124,6 +124,6 @@ describe("App", () => {
 
     await user.click(screen.getByRole("checkbox", { name: /edit mode/i }));
 
-    expect(screen.getByText("Select all (1 selected)")).toBeInTheDocument();
+    expect(screen.getByText(/1.*element selected/i)).toBeInTheDocument();
   });
 });
