@@ -1,0 +1,91 @@
+# Github User Search
+
+Confirmed Frontend technical test for [full.com](https://www.fulll.fr/) built with **React, TypeScript and Vite**.
+
+The application allows users to search Github accounts in real-time using the Github API and manage the results through a simple selection system.
+
+---
+
+# Features
+
+- Real-time search (no submit button required)
+- Debounced API requests
+- AbortController to cancel previous requests
+- Responsive layout
+- Edit mode
+- Select individual users
+- Select all users
+- Duplicate selected users
+- Delete selected users
+- Loading state
+- Empty state
+- Error handling
+- Unit tests and integration tests
+
+---
+
+# Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Vitest
+- React Testing Library
+
+---
+
+# API
+
+Github REST API
+GET https://api.github.com/search/users?q={USER}
+
+---
+
+# Edge Cases Handled
+
+- No results found
+- Github API rate limit
+- User typing quickly (request cancellation with AbortController)
+
+---
+
+# Project Structure
+
+src
+├── components
+│ ├── SearchInput
+│ ├── Toolbar
+│ ├── UserCard
+│ └── EmptyState
+│
+├── hooks
+│ └── useGithubUsers
+│
+├── services
+│ └── githubApi
+│
+├── types
+│
+├── utils
+│
+└── tests
+
+---
+
+# Run the Project
+
+npm install : Install dependencies
+npm run dev : Start development server
+npm run test : Run tests
+
+---
+
+## Notes
+
+This project was implemented following the constraints of the exercise:
+
+- No external libraries were added except testing libraries.
+- Modern frontend API requests were used (`fetch`, `AbortController`).
+- The UI was implemented following the provided mock.
+
+![alt text](image.png)
