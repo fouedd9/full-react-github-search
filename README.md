@@ -49,7 +49,7 @@ GET https://api.github.com/search/users?q={USER}
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
 src
@@ -72,9 +72,23 @@ src
 
 # Run the Project
 
-npm install : Install dependencies
-npm run dev : Start development server
-npm run test : Run tests
+Install dependencies
+
+```
+npm install
+```
+
+Start development server
+
+```
+npm run dev
+```
+
+Run tests
+
+```
+npm run test
+```
 
 ---
 
