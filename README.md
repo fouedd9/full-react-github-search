@@ -49,28 +49,26 @@ GET https://api.github.com/search/users?q={USER}
 
 ---
 
-# Project Structure
+## Project Structure
 
+```
 src
 ├── components
-│ ├── SearchInput
-│ ├── Toolbar
-│ ├── UserCard
-│ └── EmptyState
+│   ├── SearchInput
+│   ├── Toolbar
+│   ├── UserCard
+│   └── EmptyState
 │
 ├── hooks
-│ └── useGithubUsers
+│   └── useGithubUsers
 │
 ├── services
-│ └── githubApi
+│   └── githubApi
 │
 ├── types
-│
 ├── utils
-│
 └── tests
-
----
+```
 
 # Run the Project
 
