@@ -24,11 +24,9 @@ export function UserCard({ user, editMode, onToggle }: UserCardProps) {
         <p className="user-id">ID: {user.id}</p>
         <h2>{user.login}</h2>
 
-        {/* {!editMode && ( */}
         <a href={user.html_url} target="_blank" rel="noreferrer">
           View profile
         </a>
-        {/* )} */}
       </div>
     </article>
   );

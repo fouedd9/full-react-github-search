@@ -31,6 +31,7 @@ export function Toolbar({
           onClick={onDuplicate}
           disabled={selectedCount === 0}
           aria-label="Duplicate selected users"
+          title="Duplicate"
         >
           📄
         </button>
@@ -40,6 +41,7 @@ export function Toolbar({
           onClick={onDelete}
           disabled={selectedCount === 0}
           aria-label="Delete selected users"
+          title="Delete"
         >
           🗑
         </button>

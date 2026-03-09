@@ -90,9 +90,17 @@ body {
   border: none;
   font-size: 20px;
   cursor: pointer;
-  padding: 6px;
+width: 36px;
+height: 36px;
+display: flex;  
+align-items: center;
+justify-content: center;
+transition: background-color 0.2s ease;
 }
-
+.icon-button:hover {
+  background-color: #e5e7eb;
+  border-radius: 6px;
+}
 .icon-button:disabled {
   opacity: 0.4;
   cursor: not-allowed;

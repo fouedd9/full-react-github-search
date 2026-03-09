@@ -64,9 +64,7 @@ src
 │
 ├── services
 │   └── githubApi
-│
 ├── types
-├── utils
 └── tests
 ```
 
@@ -100,4 +98,27 @@ This project was implemented following the constraints of the exercise:
 - Modern frontend API requests were used (`fetch`, `AbortController`).
 - The UI was implemented following the provided mock.
 
-![alt text](image.png)
+## Mockup
+
+Below is the UI mockup provided for the exercise.
+
+<img src="Maquette.png" width="700">
+
+## AI Assistance
+
+During this exercise, AI tools were used to speed up certain tasks and improve productivity.
+
+Tools used:
+
+- ChatGPT
+- GitHub Copilot
+
+Usage:
+
+- Reviewing code structure
+- Improving documentation (README)
+- Helping write and adjust some unit tests
+- Discussing best practices and edge cases
+- Assisting with generating clear and professional commit messages
+
+All implementation choices, architecture decisions, and final code were reviewed and fully understood before being committed.
