@@ -89,7 +89,6 @@ function App() {
           {status === "idle" && (
             <EmptyState message="Start typing to search Github users" />
           )}
-          {status === "loading" && <EmptyState message="Searching users..." />}
           {error && <EmptyState message={error} />}
           {status === "success" && users.length === 0 && (
             <EmptyState message="No results found." />
