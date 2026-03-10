@@ -1,6 +1,6 @@
 # Github User Search
 
-Confirmed Frontend technical test for [full.com](https://www.fulll.fr/) built with **React, TypeScript and Vite**.
+Confirmed Frontend technical test for [fulll.fr](https://www.fulll.fr/) built with **React, TypeScript and Vite**.
 
 The application allows users to search Github accounts in real-time using the Github API and manage the results through a simple selection system.
 
