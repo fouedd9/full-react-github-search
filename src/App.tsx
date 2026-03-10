@@ -1,59 +1,63 @@
-import { useMemo, useState } from "react";
-import { EmptyState } from "./components/EmptyState";
+import { useState } from "react";
 import { SearchInput } from "./components/SearchInput";
 import { Toolbar } from "./components/Toolbar";
 import { UserCard } from "./components/UserCard";
 import { useGithubUsers } from "./hooks/useGithubUsers";
 import "./styles.css";
+import ShowData from "./components/ShowData";
+import { useUserSelection } from "./hooks/useUserSelection";
 
 function App() {
   const [query, setQuery] = useState("");
   const [editMode, setEditMode] = useState(false);
-
   const { users, setUsers, status, error } = useGithubUsers(query);
+  const {
+    selectedCount,
+    allSelectedCard,
+    handleToggleUser,
+    handleToggleAll,
+    handleDeleteSelected,
+    handleDuplicateSelected,
+  } = useUserSelection({
+    users,
+    setUsers,
+  });
 
-  const selectedCount = useMemo(() => {
-    return users.filter((user) => user.selected).length;
-  }, [users]);
+  //   setUsers((prev) =>
+  //     prev.map((user) =>
+  //       user.localId === localId ? { ...user, selected: !user.selected } : user,
+  //     ),
+  //   );
+  // };
 
-  const allSelected = users.length > 0 && selectedCount === users.length;
+  // const handleToggleAll = () => {
+  //   const nextValue = !allSelectedCard;
 
-  const handleToggleUser = (localId: string) => {
-    setUsers((prev) =>
-      prev.map((user) =>
-        user.localId === localId ? { ...user, selected: !user.selected } : user,
-      ),
-    );
-  };
+  //   setUsers((prev) =>
+  //     prev.map((user) => ({
+  //       ...user,
+  //       selected: nextValue,
+  //     })),
+  //   );
+  // };
 
-  const handleToggleAll = () => {
-    const nextValue = !allSelected;
+  // const handleDeleteSelected = () => {
+  //   setUsers((prev) => prev.filter((user) => !user.selected));
+  // };
 
-    setUsers((prev) =>
-      prev.map((user) => ({
-        ...user,
-        selected: nextValue,
-      })),
-    );
-  };
+  // const handleDuplicateSelected = () => {
+  //   setUsers((prev) => {
+  //     const duplicated = prev
+  //       .filter((user) => user.selected)
+  //       .map((user) => ({
+  //         ...user,
+  //         localId: crypto.randomUUID(),
+  //         selected: false,
+  //       }));
 
-  const handleDeleteSelected = () => {
-    setUsers((prev) => prev.filter((user) => !user.selected));
-  };
-
-  const handleDuplicateSelected = () => {
-    setUsers((prev) => {
-      const duplicated = prev
-        .filter((user) => user.selected)
-        .map((user) => ({
-          ...user,
-          localId: crypto.randomUUID(),
-          selected: false,
-        }));
-
-      return [...prev, ...duplicated];
-    });
-  };
+  //     return [...prev, ...duplicated];
+  //   });
+  // };
 
   return (
     <>
@@ -77,7 +81,7 @@ function App() {
 
           {editMode && users.length > 0 && (
             <Toolbar
-              allSelected={allSelected}
+              allSelected={allSelectedCard}
               selectedCount={selectedCount}
               onToggleAll={handleToggleAll}
               onDuplicate={handleDuplicateSelected}
@@ -85,14 +89,8 @@ function App() {
             />
           )}
 
-          {status === "loading" && <EmptyState message="Loading..." />}
-          {status === "idle" && (
-            <EmptyState message="Start typing to search Github users" />
-          )}
-          {error && <EmptyState message={error} />}
-          {status === "success" && users.length === 0 && (
-            <EmptyState message="No results found." />
-          )}
+          <ShowData status={status} error={error} userCount={users.length} />
+
           <div className="results">
             <div className="grid">
               {users.map((user) => (

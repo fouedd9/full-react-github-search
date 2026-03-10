@@ -106,11 +106,7 @@ transition: background-color 0.2s ease;
   cursor: not-allowed;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
+
 
 .results {
   max-height: 500px;
@@ -128,14 +124,6 @@ transition: background-color 0.2s ease;
   border-radius: 4px;
 }
 
-.card {
-  background: #f4f4f4;
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e5e7eb;
-}
 
 .avatar {
   width: 70px;
@@ -145,20 +133,8 @@ transition: background-color 0.2s ease;
   margin-bottom: 12px;
 }
 
-.card-content h2 {
-  margin: 6px 0;
-  font-size: 16px;
-}
 
-.card-content a {
-  display: inline-block;
-  margin-top: 10px;
-  background: #4a90e2;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-}
+
 
 .card-content a:hover {
   opacity: 0.9;
@@ -177,15 +153,19 @@ transition: background-color 0.2s ease;
   .search-input {
     max-width: 100%;
   }
+  
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 24px;
+  
 }
 
+
 .card {
+  /* width: 200px; */
   position: relative;
   background: #dcdcdc;
   border-radius: 12px;
@@ -198,6 +178,10 @@ transition: background-color 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
   border: 1px solid #d1d5db;
 }
+.card:hover {
+  border-color: #9ca3af;
+  background-color: #e5e7eb;
+} 
 
 .card-checkbox {
   position: absolute;
@@ -208,14 +192,7 @@ transition: background-color 0.2s ease;
   cursor: pointer;
 }
 
-.avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-top: 2px;
-  margin-bottom: 18px;
-}
+
 
 .card-content {
   display: flex;
@@ -244,7 +221,7 @@ transition: background-color 0.2s ease;
   min-width: 112px;
   text-align: center;
   background: #4a90e2;
-  color: #fff;
+  color: #000000;
   padding: 10px 14px;
   border-radius: 8px;
   text-decoration: none;

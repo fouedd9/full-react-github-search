@@ -63,7 +63,7 @@ describe("App", () => {
 
     render(<App />);
 
-    expect(screen.getByText("Searching users...")).toBeInTheDocument();
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
   });
 
   it("shows error state", () => {

@@ -6,9 +6,9 @@ USE CASE :
 -recherche instantanée au fur et à mesure de la saisie ✅
 - Debounce pour éviter les appels API à chaque frappe 300ms ✅
 -annulation de requete précédente a chaque nouvelle recherche ✅ 
-- Affichage d'un loader pendant la recherche withour UI
+- Affichage d'un loading... pendant la recherche ✅
 - Gestion des erreurs (ex: limite de requêtes atteinte) API RATE LIMIT CODE 403 ✅
-- aucun résultat WITHOUT UI 
+- aucun résultat ✅
 
 */
 
@@ -88,5 +88,6 @@ export function useGithubUsers(query: string) {
     setUsers,
     status: trimmedQuery ? status : "idle",
     error: trimmedQuery ? error : null,
+    
   };
 }
