@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 type ToolbarProps = {
   allSelected: boolean;
   selectedCount: number;
@@ -13,11 +15,26 @@ export function Toolbar({
   onDuplicate,
   onDelete,
 }: ToolbarProps) {
+  const checkboxRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (!checkboxRef.current) return;
+
+    checkboxRef.current.indeterminate = selectedCount > 0 && !allSelected;
+  }, [selectedCount, allSelected]);
+
   return (
     <div className="toolbar">
       <div className="toolbar-left">
         <label className="select-all">
-          <input type="checkbox" checked={allSelected} onChange={onToggleAll} />
+          <input
+            ref={checkboxRef}
+            type="checkbox"
+            checked={allSelected}
+            onChange={onToggleAll}
+            aria-checked={
+              selectedCount > 0 && !allSelected ? "mixed" : allSelected
+            }
+          />
           <span>
             {selectedCount} {selectedCount === 1 ? "element" : "elements"}{" "}
             selected
