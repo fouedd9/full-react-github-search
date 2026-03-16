@@ -23,42 +23,6 @@ function App() {
     setUsers,
   });
 
-  //   setUsers((prev) =>
-  //     prev.map((user) =>
-  //       user.localId === localId ? { ...user, selected: !user.selected } : user,
-  //     ),
-  //   );
-  // };
-
-  // const handleToggleAll = () => {
-  //   const nextValue = !allSelectedCard;
-
-  //   setUsers((prev) =>
-  //     prev.map((user) => ({
-  //       ...user,
-  //       selected: nextValue,
-  //     })),
-  //   );
-  // };
-
-  // const handleDeleteSelected = () => {
-  //   setUsers((prev) => prev.filter((user) => !user.selected));
-  // };
-
-  // const handleDuplicateSelected = () => {
-  //   setUsers((prev) => {
-  //     const duplicated = prev
-  //       .filter((user) => user.selected)
-  //       .map((user) => ({
-  //         ...user,
-  //         localId: crypto.randomUUID(),
-  //         selected: false,
-  //       }));
-
-  //     return [...prev, ...duplicated];
-  //   });
-  // };
-
   return (
     <>
       <header className="app-header">
